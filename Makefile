@@ -23,7 +23,7 @@ install: $(LIB) $(INC) $(MAN)
 	mkdir -p $(DESTDIR)$(PREFIX)/lib
 	cp $(LIB) $(DESTDIR)$(PREFIX)/lib/$(LIB)
 	mkdir -p $(DESTDIR)$(PREFIX)/include
-	cp $(INC) $(DESTDIR)$(PREFIX)/include/$(INC)
+	cp -t $(DESTDIR)$(PREFIX)/include $(INC)
 	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man3
 	cp $(MAN) $(DESTDIR)$(PREFIX)/share/man/man3/$(MAN)
 
