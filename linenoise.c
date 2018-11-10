@@ -1317,6 +1317,7 @@ void linenoiseFree(void *ptr) {
 
 /* ================================ History ================================= */
 
+#ifdef VALGRIND
 /* Free the history, but does not reset it. Only used when we have to
  * exit() to avoid memory leaks are reported by valgrind & co. */
 static void freeHistory(void) {
@@ -1328,11 +1329,14 @@ static void freeHistory(void) {
         free(history);
     }
 }
+#endif
 
 /* At exit we'll try to fix the terminal to the initial conditions. */
 static void linenoiseAtExit(void) {
     disableRawMode(STDIN_FILENO);
+#ifdef VALGRIND
     freeHistory();
+#endif
 }
 
 /* This is the API call to add a new entry in the linenoise history.
