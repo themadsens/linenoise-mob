@@ -14,6 +14,9 @@ A minimal, zero-config, BSD licensed, readline replacement.
 
 The aim of this project is to get the linenoise library up to date and keep it maintained as the original repo is currently unmaintained.
 
+This fork includes support for use on embedded platforms. Add "-D EMBEDDED" to your CFLAGS.<br/>
+In addition there is history search with ALT-P/N and smart term probing from the ESP32 IDF.
+
 ## License
 
 Linenoise is BSD code, so you can use both in free software and commercial software.
